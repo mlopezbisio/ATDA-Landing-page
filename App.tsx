@@ -4,8 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import FocusAreas from './components/FocusAreas';
 import Projects from './components/Projects';
-import Members from './components/Members';
-import CTA from './components/CTA';
+import Red from './components/Network';
 import JoinUs from './components/JoinUs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -19,8 +18,7 @@ const App: React.FC = () => {
         <About />
         <FocusAreas />
         <Projects />
-        <Members />
-        <CTA />
+        <Red />
         <JoinUs />
         <Contact />
       </main>
