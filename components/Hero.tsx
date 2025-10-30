@@ -9,10 +9,10 @@ const Hero: React.FC = () => {
       
       <div className="relative z-10 p-6 flex flex-col items-center">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
-          Impulsando el Futuro Industrial de Argentina
+          Conectar saberes. Impulsar desarrollo. Construir soberanía.
         </h1>
-        <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 mb-8">
-          Fomentamos la sinergia entre ingenieros y empresas nacionales para potenciar el desarrollo tecnológico y la soberanía industrial.
+        <p className="max-w-4xl mx-auto text-lg md:text-xl text-gray-300 mb-8">
+          Promovemos debates estratégicos con la convicción de que la transformación productiva y tecnológica es esencial para alcanzar el desarrollo inclusivo y sostenible de la Argentina.
         </p>
         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
           <a href="#about" className="bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">

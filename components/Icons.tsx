@@ -1,18 +1,258 @@
+
 import React from 'react';
 
 interface IconProps {
   className?: string;
 }
 
-export const LogoIcon: React.FC<IconProps> = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M2 7L12 12L22 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M12 22V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M20 9L15 11.5V16.5L20 14V9Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M4 9L9 11.5V16.5L4 14V9Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+export const ATDALogo: React.FC<{ className?: string; showSubtitle?: boolean }> = ({ className, showSubtitle = true }) => (
+  <svg
+    id="Capa_3"
+    data-name="Capa 3"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 1044.94 546.68"
+    className={className}
+    aria-label="Logo de ATDA, Asociación Tecnológica para el Desarrollo Argentino"
+  >
+    <defs>
+      <style>{`
+      .cls-1 {
+        fill: url(#Degradado_sin_nombre_56);
+        stroke: #1462ab;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: .5px;
+      }
+
+      .cls-6 {
+        letter-spacing: .1em;
+      }
+
+      .cls-7 {
+        letter-spacing: .08em;
+      }
+
+      .cls-8 {
+        clip-path: url(#clippath-4);
+      }
+
+      .cls-2 {
+        fill: url(#Degradado_sin_nombre_63-2);
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke: #062337;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-9 {
+        letter-spacing: .09em;
+      }
+
+      .cls-10 {
+        fill: #052032;
+      }
+
+      .cls-11 {
+        letter-spacing: .1em;
+      }
+
+      .cls-12 {
+        fill: #052033;
+      }
+
+      .cls-13 {
+        letter-spacing: .03em;
+      }
+
+      .cls-14 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: url(#Degradado_sin_nombre_69);
+      }
+
+      .cls-4 {
+        fill: url(#Degradado_sin_nombre_63);
+      }
+
+      .cls-15 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-16 {
+        isolation: isolate;
+      }
+
+      .cls-17 {
+        fill: #052134;
+      }
+
+      .cls-18 {
+        clip-path: url(#clippath-3);
+      }
+
+      .cls-5 {
+        fill: url(#Degradado_sin_nombre_70);
+      }
+
+      .cls-19 {
+        letter-spacing: .09em;
+      }
+
+      .cls-20 {
+        letter-spacing: .02em;
+      }
+
+      .cls-21 {
+        font-family: Montserrat-Medium, Montserrat;
+        font-size: 31.3px;
+        font-variation-settings: '';
+        font-weight: 500;
+      }
+
+      .cls-22 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-23 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-24 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-25 {
+        letter-spacing: .1em;
+      }
+
+      .cls-26 {
+        fill: #062337;
+      }
+    `}</style>
+      <linearGradient id="Degradado_sin_nombre_63" data-name="Degradado sin nombre 63" x1="348.79" y1="259.13" x2="849.2" y2="259.13" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stopColor="#1561a9" />
+        <stop offset=".46" stopColor="#593ec5" />
+        <stop offset=".82" stopColor="#8827d9" />
+        <stop offset="1" stopColor="#9a1fe1" />
+      </linearGradient>
+      <linearGradient id="Degradado_sin_nombre_70" data-name="Degradado sin nombre 70" x1="348.09" y1="257.8" x2="851.93" y2="257.8" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stopColor="#1561a9" />
+        <stop offset=".4" stopColor="#4f44c1" />
+        <stop offset=".8" stopColor="#8529d8" />
+        <stop offset="1" stopColor="#9a1fe1" />
+      </linearGradient>
+      <linearGradient id="Degradado_sin_nombre_69" data-name="Degradado sin nombre 69" x1="314" y1="257.82" x2="853.7" y2="257.82" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stopColor="#1561a9" />
+        <stop offset="1" stopColor="#9a1fe1" />
+      </linearGradient>
+      <linearGradient id="Degradado_sin_nombre_63-2" data-name="Degradado sin nombre 63" x1="349.86" y1="257.82" x2="849.2" y2="257.82" xlinkHref="#Degradado_sin_nombre_63" />
+      <clipPath id="clippath">
+        <path className="cls-14" d="M258.83,178.89l20.9-8.65c-3.43,1.42-6.13,4.19-7.84,7.81l-20.9,8.65c1.71-3.62,4.41-6.39,7.84-7.81Z" />
+      </clipPath>
+      <clipPath id="clippath-1">
+        <path className="cls-14" d="M297.81,213.89l-20.9,8.65c-1.27.53-2.64.87-4.09,1-3.94.35-7.92-.89-11.47-3.29l20.9-8.65c3.55,2.4,7.54,3.64,11.47,3.29,1.46-.13,2.82-.47,4.09-1Z" />
+      </clipPath>
+      <clipPath id="clippath-2">
+        <path className="cls-14" d="M276.98,206.83l-20.9,8.65c-3.04-3.58-5.35-8.09-6.45-13.14-.7-3.24-.83-6.34-.46-9.24l20.9-8.65c-.38,2.9-.25,6,.46,9.24,1.1,5.05,3.41,9.56,6.45,13.14Z" />
+      </clipPath>
+      <clipPath id="clippath-3">
+        <path className="cls-14" d="M106.13,54.04l20.9-8.65c-7.51,3.11-11.52,12.68-9.18,23.47,2.71,12.46,12.87,21.85,22.8,21.2l-20.9,8.65c-9.93.64-20.09-8.74-22.8-21.21-2.34-10.79,1.67-20.36,9.18-23.47Z" />
+      </clipPath>
+      <linearGradient id="Degradado_sin_nombre_56" data-name="Degradado sin nombre 56" x1="117.18" y1="245.93" x2="307.64" y2="245.93" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stopColor="#32cbf1" />
+        <stop offset="0" stopColor="#32caf1" />
+        <stop offset=".14" stopColor="#3fa5f1" />
+        <stop offset=".29" stopColor="#4a87f1" />
+        <stop offset=".44" stopColor="#536ff1" />
+        <stop offset=".6" stopColor="#595ff1" />
+        <stop offset=".78" stopColor="#5c55f1" />
+        <stop offset="1" stopColor="#5e52f2" />
+      </linearGradient>
+      <clipPath id="clippath-4">
+        <path className="cls-14" d="M222.36,446.46l-20.9,8.65c-1.27.53-2.64.87-4.1,1-10.07.9-20.45-8.59-23.19-21.2-2.34-10.78,1.67-20.33,9.17-23.44l20.9-8.65c-7.5,3.11-11.51,12.65-9.17,23.44,2.74,12.61,13.12,22.1,23.19,21.2,1.46-.13,2.83-.47,4.1-1Z" />
+      </clipPath>
+    </defs>
+    {showSubtitle && (
+      <text className="cls-21" transform="translate(288.44 401.82)" fill="white">
+        <tspan className="cls-11" x="0" y="0">ASOCI</tspan>
+        <tspan className="cls-9" x="116.64" y="0">A</tspan>
+        <tspan className="cls-6" x="142.37" y="0">CIÓN T</tspan>
+        <tspan className="cls-25" x="272" y="0">E</tspan>
+        <tspan className="cls-11" x="296.07" y="0">CNO</tspan>
+        <tspan className="cls-19" x="379.81" y="0">L</tspan>
+        <tspan className="cls-11" x="401.13" y="0">ÓGI</tspan>
+        <tspan className="cls-7" x="470.69" y="0">C</tspan>
+        <tspan className="cls-11" x="495.92" y="0">A</tspan>
+        <tspan className="cls-13" x="521.96" y="0"> </tspan>
+        <tspan className="cls-23" x="0" y="37.56">P</tspan>
+        <tspan className="cls-13" x="22.23" y="37.56">ARA EL DESARROL</tspan>
+        <tspan className="cls-20" x="342.31" y="37.56">L</tspan>
+        <tspan className="cls-13" x="361.53" y="37.56">O ARGENTINO</tspan>
+      </text>
+    )}
+    <g>
+      <path className="cls-4" d="M601.26,347.92v-177.57c27.24,1.07,54.41-.09,80.86,3.71,41.12,5.91,67.14,37.73,68.93,79.1.94,21.71-2.06,42.26-15.39,60.38-13.76,18.7-32.56,29.87-55.02,31.97-26.14,2.44-52.57,1.75-79.39,2.43ZM636.31,315.19c11.08,0,21.94.88,32.6-.21,15.37-1.57,28.31-8.7,37.01-21.85,8.58-12.97,11.66-27.39,9.13-42.83-3.67-22.4-15.13-39.13-37.73-44.69-13.07-3.21-27.06-2.69-41.01-3.88v113.46Z" />
+      <path className="cls-5" d="M496.68,345.26v-143.66h-50.4v-31.25h135.28v30.86h-48.94v144.06h-35.93Z" />
+      <path className="cls-3" d="M436.27,170.34c-26.36,0-51.07,12.82-66.25,34.38l-54.94,78.02-21.71,30.83-1.47,2.09c-8.77,12.46.14,29.64,15.38,29.64h0l23-31.72h69.89v31.72h36.1v-174.96h0ZM400.17,282.75h-47.54l47.54-65.57v65.57Z" />
+      <path className="cls-2" d="M760.82,170.34v112.4s0,30.83,0,30.83v31.72s36.1,0,36.1,0v-31.72h69.89s23,31.72,23,31.72h0c15.24,0,24.15-17.18,15.38-29.64l-1.47-2.09-21.71-30.83-54.94-78.02c-15.18-21.55-39.89-34.38-66.25-34.38h0ZM796.92,217.18l47.54,65.57h-47.54v-65.57Z" />
+    </g>
+    <g className="cls-16">
+      <g className="cls-16">
+        <g className="cls-24">
+          <g className="cls-16">
+            <path className="cls-17" d="M271.89,178.05l-20.9,8.65c.97-2.06,2.26-3.84,3.83-5.26l20.9-8.65c-1.56,1.42-2.85,3.2-3.83,5.26" />
+            <path className="cls-10" d="M275.71,172.8l-20.9,8.65c1.19-1.08,2.53-1.94,4.01-2.56l20.9-8.65c-1.48.61-2.83,1.48-4.01,2.56" />
+          </g>
+        </g>
+      </g>
+      <g className="cls-16">
+        <g className="cls-15">
+          <g className="cls-16">
+            <path className="cls-10" d="M297.81,213.89l-20.9,8.65c-1.27.53-2.64.87-4.09,1-3.94.35-7.92-.89-11.47-3.29l20.9-8.65c3.55,2.4,7.54,3.64,11.47,3.29,1.46-.13,2.82-.47,4.09-1Z" />
+          </g>
+        </g>
+      </g>
+      <g className="cls-16">
+        <g className="cls-22">
+          <g className="cls-16">
+            <path className="cls-10" d="M276.98,206.83l-20.9,8.65c-2.44-2.87-4.41-6.34-5.66-10.21l20.9-8.65c1.25,3.87,3.22,7.34,5.66,10.21" />
+            <path className="cls-17" d="M271.32,196.62l-20.9,8.65c-.31-.95-.57-1.93-.79-2.93-.7-3.24-.83-6.34-.46-9.24l20.9-8.65c-.38,2.9-.25,6,.46,9.24.22,1,.48,1.98,.79,2.93" />
+          </g>
+        </g>
+      </g>
+      <polygon className="cls-12" points="270.07 184.44 249.18 193.09 128.48 94.95 149.38 86.3 270.07 184.44" />
+      <g className="cls-16">
+        <g className="cls-18">
+          <g className="cls-16">
+            <path className="cls-10" d="M140.64,90.07l-20.9,8.65c-9.14.59-18.47-7.31-22.01-18.28l20.9-8.65c3.54,10.97,12.87,18.88,22.01,18.28" />
+            <path className="cls-17" d="M118.63,71.79l-20.9,8.65c-.31-.95-.57-1.93-.79-2.92-1.88-8.66.33-16.53,5.15-20.91l20.9-8.65c-4.83,4.38-7.03,12.25-5.15,20.91.22.99.48,1.97,.79,2.92" />
+            <path className="cls-10" d="M123,47.96l-20.9,8.65c1.19-1.08,2.54-1.95,4.02-2.56l20.9-8.65c-1.48.61-2.83,1.48-4.02,2.56" />
+          </g>
+        </g>
+      </g>
+      <polygon className="cls-26" points="214.09 401.18 193.2 409.83 256.08 215.48 276.98 206.83 214.09 401.18" />
+      <polygon className="cls-26" points="208.35 401.82 187.45 410.47 119.75 98.72 140.64 90.07 208.35 401.82" />
+      <path className="cls-1" d="M283.81,169.25c10.07-.9,20.43,8.59,23.16,21.17,2.74,12.61-3.18,23.56-13.25,24.46-3.94.35-7.92-.89-11.47-3.29l-62.57,193.4c5.6,3.69,10.18,10.25,11.86,17.99,2.74,12.61-3.2,23.57-13.27,24.47-10.07.9-20.45-8.59-23.19-21.2-2.74-12.61,3.21-23.53,13.28-24.44L140.64,90.07c-9.93.64-20.09-8.74-22.8-21.2-2.74-12.61,3.2-23.57,13.27-24.47,10.07-.9,20.45,8.59,23.19,21.2,1.27,5.87.65,11.38-1.39,15.69l118.97,96.76c2.34-4.96,6.54-8.32,11.92-8.81ZM214.09,401.18l62.88-194.36c-3.04-3.58-5.35-8.09-6.45-13.14-.7-3.24-.83-6.34-.46-9.24l-120.7-98.15c-.96.89-2.03,1.66-3.17,2.29l67.89,312.6" />
+      <g className="cls-16">
+        <g className="cls-8">
+          <g className="cls-16">
+            <path className="cls-10" d="M222.36,446.46l-20.9,8.65c-1.27.53-2.64.87-4.1,1-9.28.83-18.82-7.16-22.4-18.28l20.9-8.65c3.59,11.12,13.13,19.11,22.4,18.28,1.46-.13,2.83-.47,4.1-1" />
+            <path className="cls-17" d="M195.86,429.18l-20.9,8.65c-.31-.95-.57-1.93-.79-2.92-1.88-8.65.33-16.5,5.15-20.87l20.9-8.65c-4.82,4.37-7.02,12.23-5.15,20.87.22.99.48,1.97,.79,2.92" />
+            <path className="cls-10" d="M200.22,405.38l-20.9,8.65c1.19-1.08,2.54-1.95,4.03-2.56l20.9-8.65c-1.49.62-2.84,1.48-4.03,2.56" />
+          </g>
+        </g>
+      </g>
+    </g>
   </svg>
 );
+
 
 export const CollaborationIcon: React.FC<IconProps> = ({ className }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

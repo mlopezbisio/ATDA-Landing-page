@@ -1,15 +1,13 @@
-
 import React from 'react';
-import { LogoIcon, TwitterIcon, LinkedInIcon } from './Icons';
+import { ATDALogo, TwitterIcon, LinkedInIcon } from './Icons';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 border-t border-gray-800">
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-col items-center sm:flex-row sm:justify-between">
-          <a href="#home" className="flex items-center space-x-3 mb-4 sm:mb-0">
-            <LogoIcon className="h-8 w-8 text-blue-500" />
-            <span className="text-xl font-bold text-white">ATDA</span>
+          <a href="#home" aria-label="Volver a la página de inicio" className="flex items-center mb-4 sm:mb-0 text-gray-400">
+            <ATDALogo className="h-12 w-auto" />
           </a>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">

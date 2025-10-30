@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { LogoIcon } from './Icons';
+import { ATDALogo } from './Icons';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,9 +25,8 @@ const Header: React.FC = () => {
     <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-gray-900/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="#home" className="flex items-center space-x-3 text-white hover:text-blue-400 transition-colors">
-            <LogoIcon className="h-8 w-8 text-blue-500" />
-            <span className="text-xl font-bold tracking-wider">ATDA</span>
+          <a href="#home" aria-label="Volver a la página de inicio" className="flex items-center text-white">
+            <ATDALogo className="h-12 w-auto" showSubtitle={false} />
           </a>
           
           <nav className="hidden md:flex items-center space-x-8">
