@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { CollaborationIcon, InnovationIcon, CommitmentIcon, ExcellenceIcon } from './Icons';
+import { CollaborationIcon, DebateIcon, DevelopmentIcon, KnowledgeIcon } from './Icons';
 
 interface ValueCardProps {
   icon: React.ReactNode;
@@ -22,23 +21,23 @@ const About: React.FC = () => {
   const values = [
     {
       icon: <CollaborationIcon className="h-8 w-8 text-blue-400" />,
-      title: 'Colaboración',
-      description: 'Unimos talentos y disciplinas para crear soluciones integrales y potenciar el tejido industrial nacional.',
+      title: 'Vinculación Tecnológica',
+      description: 'Promovemos la conexión y colaboración entre instituciones, profesionales y empresas para potenciar el sistema tecnológico nacional.',
     },
     {
-      icon: <InnovationIcon className="h-8 w-8 text-blue-400" />,
-      title: 'Innovación',
-      description: 'Impulsamos la investigación y el desarrollo de tecnologías de vanguardia aplicadas a la industria argentina.',
+      icon: <DebateIcon className="h-8 w-8 text-blue-400" />,
+      title: 'Debate y Perspectiva',
+      description: 'Aportamos una mirada técnica sobre los grandes temas del país, propiciando un espacio de debate constructivo y federal.',
     },
     {
-      icon: <CommitmentIcon className="h-8 w-8 text-blue-400" />,
-      title: 'Compromiso Nacional',
-      description: 'Trabajamos por la soberanía tecnológica y el fortalecimiento de las empresas de nuestro país.',
+      icon: <DevelopmentIcon className="h-8 w-8 text-blue-400" />,
+      title: 'Desarrollo Nacional',
+      description: ' Aportamos e impulsamos el análisis de la enseñanza, la investigación, el ejercicio profesional y la planificación de obras públicas y privadas.',
     },
     {
-      icon: <ExcellenceIcon className="h-8 w-8 text-blue-400" />,
-      title: 'Excelencia',
-      description: 'Promovemos los más altos estándares de calidad y profesionalismo en cada proyecto que emprendemos.',
+      icon: <KnowledgeIcon className="h-8 w-8 text-blue-400" />,
+      title: 'Democratización del conocimiento',
+      description: 'Difundimos saberes especializados de forma comprensible, ofreciendo herramientas para entender la realidad tecnológica y económica del país.',
     },
   ];
 
@@ -46,9 +45,9 @@ const About: React.FC = () => {
     <section id="about" className="py-20 bg-gray-900">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white">Nuestra Misión: Construir Futuro</h2>
-          <p className="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">
-            Somos una asociación sin fines de lucro que busca la integración ingenieril para un desarrollo industrial sostenible y soberano del país, apoyando a empresas nacionales en sus vías de crecimiento.
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white">Quiénes somos</h2>
+          <p className="mt-4 text-lg text-gray-400 max-w-4xl mx-auto">
+            ATDA nace del compromiso de integrantes de la Universidad Tecnológica Nacional que, a partir de sus trayectorias en el sector público y privado, decidieron formar un grupo interdisciplinario de profesionales de la ingeniería, la ciencia, la técnica y la tecnología, con el propósito de generar un espacio de participación activa para la promoción del desarrollo industrial y tecnológico de Argentina.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

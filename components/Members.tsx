@@ -3,14 +3,14 @@ import React from 'react';
 
 const Members: React.FC = () => {
   const memberLogos = [
-    'Industria ARG', 'TecnoNacional', 'Ingeniería Futura', 'Desarrollo S.A.', 'Conectar IT', 'Metalúrgica Avanzada'
+    'Universidad Tecnológica Nacional', 'Instituto Nacional de Tecnología Industrial', 'Instituto Argentino de Soldadura', 'Ingecoop LTDA'
   ];
 
   return (
     <section id="members" className="py-20 bg-gray-900">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white">Nuestros Miembros y Socios Estratégicos</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white">Socios Estratégicos</h2>
           <p className="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">
             Colaboramos con empresas y organizaciones líderes que comparten nuestra visión de un futuro industrial próspero.
           </p>

@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   const navLinks = [
     { name: 'Sobre Nosotros', href: '#about' },
     { name: 'Áreas de Enfoque', href: '#focus-areas' },
-    { name: 'Proyectos', href: '#projects' },
+    { name: 'Actividad', href: '#projects' },
     { name: 'Miembros', href: '#members' },
     { name: 'Contacto', href: '#contact' },
   ];

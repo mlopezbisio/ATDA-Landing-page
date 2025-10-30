@@ -48,7 +48,7 @@ const Projects: React.FC = () => {
     <section id="projects" className="py-20 bg-gray-800/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white">Proyectos Destacados</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white">Actividad</h2>
           <p className="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">
             Iniciativas que marcan la diferencia, impulsando la innovación y la competitividad de la industria argentina.
           </p>

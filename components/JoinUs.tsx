@@ -3,16 +3,16 @@ import { CollaborationIcon } from './Icons';
 
 const JoinUs: React.FC = () => {
   const benefits = [
-    'Acceso a una red de profesionales y empresas líderes.',
-    'Participación en proyectos de alto impacto tecnológico.',
-    'Oportunidades de capacitación y desarrollo profesional.',
-    'Ser parte activa en la definición del futuro industrial del país.',
+    'Conecta con una red interdisciplinaria de profesionales, instituciones y empresas del sector.',
+    'Participa en debates y análisis sobre los grandes temas tecnológicos que definen el futuro del país.',
+    'Accede y contribuye a la difusión de conocimiento especializado y al perfeccionamiento de la tecnología argentina.',
+    'Impulsa iniciativas concretas que fortalezcan la soberanía y el desarrollo industrial nacional.',
   ];
 
   const eligibility = [
-    { title: 'Profesionales', description: 'Ingenieros, tecnólogos y especialistas de diversas disciplinas.' },
-    { title: 'Estudiantes', description: 'Jóvenes talentos de carreras técnicas y de ingeniería con ganas de aprender.' },
-    { title: 'Empresas', description: 'Organizaciones nacionales comprometidas con la innovación y el desarrollo.' },
+    { title: 'Profesionales', description: 'Ingenieros, tecnólogos y especialistas de diversas disciplinas comprometidos con el desarrollo nacional.' },
+    { title: 'Estudiantes', description: 'Jóvenes talentos de carreras técnicas y de ingeniería con ganas de aprender y aportar.' },
+    { title: 'Empresas', description: 'Organizaciones nacionales que apuestan por la innovación, la vinculación y el fortalecimiento del tejido industrial.' },
   ];
 
   return (
@@ -30,16 +30,17 @@ const JoinUs: React.FC = () => {
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-blue-400 mb-4">Beneficios de ser Miembro</h3>
-              <ul className="space-y-2 list-disc list-inside text-gray-300">
+              <ul className="space-y-3 list-disc list-inside text-gray-300">
                 {benefits.map((benefit, index) => <li key={index}>{benefit}</li>)}
               </ul>
             </div>
             <div>
               <h3 className="text-2xl font-bold text-blue-400 mb-4">¿Quiénes pueden unirse?</h3>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {eligibility.map((item, index) => (
                   <div key={index}>
-                    <p className="font-semibold text-white">{item.title}: <span className="font-normal text-gray-400">{item.description}</span></p>
+                    <p className="font-semibold text-white text-lg">{item.title}</p>
+                    <p className="text-gray-400">{item.description}</p>
                   </div>
                 ))}
               </div>

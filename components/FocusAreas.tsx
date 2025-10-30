@@ -43,7 +43,7 @@ const FocusAreas: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white">Nuestras Áreas de Enfoque</h2>
           <p className="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">
-            Concentramos nuestros esfuerzos en sectores estratégicos para el crecimiento soberano y sostenible de Argentina.
+            Aportamos una perspectiva técnica en sectores estratégicos, concentrando nuestros esfuerzos en áreas clave para el crecimiento soberano y sostenible de Argentina.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
