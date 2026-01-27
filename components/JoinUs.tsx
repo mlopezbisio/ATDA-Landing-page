@@ -20,14 +20,14 @@ const JoinUs: React.FC = () => {
     const targetId = href.substring(1);
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
-        const headerOffset = 80; 
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      
-        window.scrollTo({
-             top: offsetPosition,
-             behavior: "smooth"
-        });
+      const headerOffset = 80;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
 
@@ -65,19 +65,18 @@ const JoinUs: React.FC = () => {
 
           {/* Right Column: CTA Card */}
           <div className="bg-black/20 backdrop-blur-lg p-8 rounded-xl shadow-2xl border border-white/20 flex flex-col items-center text-center">
-             <div className="flex items-center justify-center h-16 w-16 rounded-full bg-white/20 mx-auto mb-4">
-               <CollaborationIcon className="h-8 w-8 text-white" /> 
+            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-white/20 mx-auto mb-4">
+              <CollaborationIcon className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-3">¿Listo para dar el paso?</h3>
             <p className="text-blue-100 mb-6">
-              Contacta con nosotros para iniciar tu proceso de membresía y empezar a colaborar en la construcción de un futuro industrial próspero.
+              Contactanos para iniciar tu proceso de membresía y empezar a colaborar en la construcción de un futuro industrial soberano.
             </p>
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
               className="w-full text-center bg-white text-blue-700 font-bold px-8 py-3 rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
-              Contactar Ahora
+              Quiero sumar mi potencial
             </a>
           </div>
         </div>
