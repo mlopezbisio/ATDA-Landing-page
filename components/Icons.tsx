@@ -261,7 +261,7 @@ export const CollaborationIcon: React.FC<IconProps> = ({ className }) => (
 
 export const DevelopmentIcon: React.FC<IconProps> = ({ className }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h1a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.834 9.589a2 2 0 012.332 0l.23.149a2 2 0 002.332 0l.23-.149a2 2 0 012.332 0l.23.149a2 2 0 002.332 0l.23-.149a2 2 0 012.332 0l.23.149a2 2 0 002.332 0l.23-.149a2 2 0 012.332 0l.23.149a2 2 0 002.332 0"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 11c-3.866 0-7-3.134-7-7s3.134-7 7-7 7 3.134 7 7-3.134 7-7 7z"></path>
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
   </svg>
 );
 
