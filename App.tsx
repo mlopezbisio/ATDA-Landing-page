@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
-import FocusAreas from './components/FocusAreas';
+
 import Projects from './components/Projects';
 import Red from './components/Network';
 import JoinUs from './components/JoinUs';
@@ -16,7 +16,7 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <About />
-        <FocusAreas />
+
         <Projects />
         <Red />
         <JoinUs />

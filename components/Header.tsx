@@ -8,7 +8,7 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { name: 'Sobre Nosotros', href: '#about' },
-    { name: 'Áreas de Enfoque', href: '#focus-areas' },
+
     { name: 'Actividad', href: '#projects' },
     { name: 'Red', href: '#Network' },
     { name: 'Contacto', href: '#contact' },
@@ -19,7 +19,7 @@ const Header: React.FC = () => {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
-    
+
     const timer = setTimeout(() => {
       setLogoLoaded(true);
     }, 100);
@@ -35,15 +35,15 @@ const Header: React.FC = () => {
     const targetId = href.substring(1);
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
-        const headerOffset = 80; 
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      
-        window.scrollTo({
-             top: offsetPosition,
-             behavior: "smooth"
-        });
-        setIsOpen(false); // Close mobile menu on click
+      const headerOffset = 80;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+      setIsOpen(false); // Close mobile menu on click
     }
   };
 
@@ -55,7 +55,7 @@ const Header: React.FC = () => {
           <a href="#home" onClick={(e) => handleNavClick(e, '#home')} aria-label="Volver a la página de inicio" className={`flex items-center text-white transition-opacity duration-500 ${logoLoaded ? 'logo-animate' : 'opacity-0'}`}>
             <ATDALogo className="h-12 w-auto" showSubtitle={false} />
           </a>
-          
+
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a key={link.name} href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="text-gray-300 hover:text-white transition-colors font-medium">
