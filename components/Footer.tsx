@@ -25,11 +25,11 @@ const Footer: React.FC = () => {
             <a href="https://x.com/atda_arg" target="_blank" rel="noopener noreferrer" aria-label="Perfil de ATDA en X/Twitter" className="text-gray-400 hover:text-white transition-colors">
               <TwitterIcon className="h-6 w-6" />
             </a>
-            <a href="https://www.linkedin.com/company/atda-arg/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de ATDA en LinkedIn" className="text-gray-400 hover:text-white transition-colors">
-              <LinkedInIcon className="h-6 w-6" />
-            </a>
             <a href="https://www.instagram.com/atda_arg" target="_blank" rel="noopener noreferrer" aria-label="Perfil de ATDA en Instagram" className="text-gray-400 hover:text-white transition-colors">
               <InstagramIcon className="h-6 w-6" />
+            </a>
+            <a href="https://www.linkedin.com/company/atda-arg/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de ATDA en LinkedIn" className="text-gray-400 hover:text-white transition-colors">
+              <LinkedInIcon className="h-6 w-6" />
             </a>
           </div>
         </div>
