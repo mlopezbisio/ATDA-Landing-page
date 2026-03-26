@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
             <a href="mailto:mlopezbisio@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar un correo electrónico" className="text-gray-400 hover:text-white transition-colors">
               <MailIcon className="h-6 w-6" />
             </a>
-            <a href="https://drive.google.com/file/d/1BQW8N4nwwoaJ6XYHcFt49IvGDraml2qp/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Ver documento" className="text-gray-400 hover:text-white transition-colors">
+            <a href="https://drive.google.com/file/d/11EHh-8C7vRb_8dNqpscjGbAU0VpYUWs8/view?usp=drive_link" target="_blank" rel="noopener noreferrer" aria-label="Ver documento" className="text-gray-400 hover:text-white transition-colors">
               <BookIcon className="h-6 w-6" />
             </a>
           </div>
