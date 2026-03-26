@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="text-center text-gray-500 mt-8">
-          <p>&copy; {new Date().getFullYear()} Asociación Tecnológica para el Desarrollo Argentino. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Sitio oficial de la Asociación Civil Tecnológica por el Desarrollo Argentino (ATDA) - Dominio: atda.org.ar </p>
         </div>
       </div>
     </footer>
