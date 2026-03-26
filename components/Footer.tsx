@@ -1,5 +1,5 @@
 import React from 'react';
-import { ATDALogo, TwitterIcon, LinkedInIcon, InstagramIcon } from './Icons';
+import { ATDALogo, TwitterIcon, LinkedInIcon, InstagramIcon, MailIcon, BookIcon } from './Icons';
 
 const Footer: React.FC = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -30,6 +30,12 @@ const Footer: React.FC = () => {
             </a>
             <a href="https://www.linkedin.com/company/atda-arg/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de ATDA en LinkedIn" className="text-gray-400 hover:text-white transition-colors">
               <LinkedInIcon className="h-6 w-6" />
+            </a>
+            <a href="mailto:mlopezbisio@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar un correo electrónico" className="text-gray-400 hover:text-white transition-colors">
+              <MailIcon className="h-6 w-6" />
+            </a>
+            <a href="https://drive.google.com/file/d/1BQW8N4nwwoaJ6XYHcFt49IvGDraml2qp/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Ver documento" className="text-gray-400 hover:text-white transition-colors">
+              <BookIcon className="h-6 w-6" />
             </a>
           </div>
         </div>
