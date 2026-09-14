@@ -1,0 +1,18 @@
+import { EnrollmentsTable } from "@/components/admin/enrollments-table";
+import { getEnrollments } from "@/lib/sanity/fetch";
+import { isSanityConfigured } from "@/lib/sanity/env";
+
+export default async function AdminEnrollmentsPage() {
+  const items = isSanityConfigured() ? await getEnrollments() : [];
+
+  return (
+    <div>
+      <h1 className="mb-2 text-3xl font-bold text-white">Inscripciones</h1>
+      <p className="mb-6 text-gray-400">
+        El aula virtual se crea a mano. Cuando el pago está acreditado, marcá el acceso como asignado y dejá el
+        usuario o enlace en las notas.
+      </p>
+      <EnrollmentsTable items={items} />
+    </div>
+  );
+}

@@ -1,20 +1,25 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# ATDA — Landing
 
-# Run and deploy your AI Studio app
+Sitio de la Asociación Civil Tecnológica por el Desarrollo Argentino. Next.js App Router con contenido en Sanity, panel `/admin` y checkout de cursos (Mercado Pago + TaloPay).
 
-This contains everything you need to run your app locally.
+## Desarrollo local
 
-View your app in AI Studio: https://ai.studio/apps/drive/1m8QXmkuM5_da5Zfpv0d8ZwGKz3fQqImp
+1. Copiá `.env.example` a `.env.local` y completá las claves.
+2. `npm install`
+3. `npm run dev`
 
-## Run Locally
+Sin Sanity configurado la landing igual arranca con el contenido de respaldo. Las secciones Áreas, Actividad, Red y Cursos solo se muestran cuando hay documentos publicados en Sanity.
 
-**Prerequisites:**  Node.js
+## Flujo de Git
 
+Ver [CONTRIBUTING.md](CONTRIBUTING.md). Resumen: ramas `feat/*` y `fix/*` desde `develop`, PR a `develop`, release con PR `develop` → `main`.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Panel de administración
+
+`/admin` — ingreso con Google. Solo mails listados en `ADMIN_EMAILS`. El aula virtual de cada inscripción se asigna a mano; el panel solo marca el acceso como concedido.
+
+## Webhooks
+
+- Sanity: `POST /api/webhooks/sanity` (revalida la landing).
+- Mercado Pago: `POST /api/webhooks/mercadopago`
+- TaloPay: `POST /api/webhooks/talo`

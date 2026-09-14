@@ -1,0 +1,25 @@
+import NextAuth from "next-auth";
+import Google from "next-auth/providers/google";
+import { isAdminEmail } from "@/lib/utils";
+
+export const { handlers, auth, signIn, signOut } = NextAuth({
+  providers: [
+    Google({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+  ],
+  pages: {
+    signIn: "/admin/login",
+    error: "/admin/login",
+  },
+  callbacks: {
+    async signIn({ user }) {
+      return isAdminEmail(user.email);
+    },
+    async session({ session }) {
+      return session;
+    },
+  },
+  trustHost: true,
+});
