@@ -1,9 +1,16 @@
 import type { LandingSettings } from "@/lib/sanity/types";
 import { ValueIconView } from "./icon-map";
+import { sectionBandClass, sectionCardClass, type SectionBand } from "./section-band";
 
-export function About({ settings }: { settings: LandingSettings }) {
+export function About({
+  settings,
+  band = "base",
+}: {
+  settings: LandingSettings;
+  band?: SectionBand;
+}) {
   return (
-    <section id="about" className="bg-gray-900 py-20">
+    <section id="about" className={`${sectionBandClass(band)} py-20`}>
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-extrabold text-white md:text-4xl">{settings.aboutTitle}</h2>
@@ -12,8 +19,8 @@ export function About({ settings }: { settings: LandingSettings }) {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {settings.aboutValues.map((value) => (
             <div
-              key={value.title}
-              className="rounded-xl bg-gray-800 p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/20"
+              key={value._key ?? value.title}
+              className={`rounded-xl ${sectionCardClass(band)} p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/20`}
             >
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-600/20">
                 <ValueIconView name={value.icon} className="h-8 w-8 text-blue-400" />

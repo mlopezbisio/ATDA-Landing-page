@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
   },
+  allowedDevOrigins: ["127.0.0.1", "localhost"],
 };
 
 export default nextConfig;

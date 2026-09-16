@@ -13,6 +13,7 @@ export async function POST(request: Request) {
 
   revalidateTag("landing", "max");
   revalidatePath("/");
+  revalidatePath("/actividad");
   revalidatePath("/cursos");
   return Response.json({ ok: true });
 }

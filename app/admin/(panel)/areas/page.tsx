@@ -13,16 +13,7 @@ export default async function AdminAreasPage() {
         items={items}
         fields={[
           { name: "title", label: "Título" },
-          {
-            name: "icon",
-            label: "Ícono",
-            type: "select",
-            options: [
-              { value: "energy", label: "Energía" },
-              { value: "industry40", label: "Industria 4.0" },
-              { value: "biotech", label: "Biotecnología" },
-            ],
-          },
+          { name: "icon", label: "Ícono", type: "icon" },
           { name: "description", label: "Descripción", type: "textarea" },
         ]}
       />

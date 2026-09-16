@@ -5,13 +5,17 @@ import { isSanityConfigured } from "./env";
 import {
   courseByIdQuery,
   courseBySlugQuery,
+  courseCategoriesQuery,
   coursesQuery,
   enrollmentByIdQuery,
   enrollmentsQuery,
   focusAreasQuery,
   landingSettingsQuery,
   partnersQuery,
+  projectBySlugQuery,
+  projectCategoriesQuery,
   projectsQuery,
+  publishedProjectsQuery,
 } from "./queries";
 import type {
   Course,
@@ -78,6 +82,30 @@ export async function getCourseBySlug(slug: string) {
   const client = getReadClient();
   if (!client) return null;
   return client.fetch<Course | null>(courseBySlugQuery, { slug });
+}
+
+export async function getProjectBySlug(slug: string) {
+  const client = getReadClient();
+  if (!client) return null;
+  return client.fetch<Project | null>(projectBySlugQuery, { slug });
+}
+
+export async function getPublishedProjects() {
+  const client = getReadClient();
+  if (!client) return [] as Project[];
+  return client.fetch<Project[]>(publishedProjectsQuery);
+}
+
+export async function getProjectCategories() {
+  const client = getReadClient();
+  if (!client) return [] as string[];
+  return client.fetch<string[]>(projectCategoriesQuery);
+}
+
+export async function getCourseCategories() {
+  const client = getReadClient();
+  if (!client) return [] as string[];
+  return client.fetch<string[]>(courseCategoriesQuery);
 }
 
 export async function getCourseById(id: string) {

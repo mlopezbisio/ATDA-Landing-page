@@ -15,7 +15,7 @@ export default async function AdminNetworkPage() {
         fields={[
           { name: "name", label: "Nombre" },
           { name: "url", label: "Sitio web" },
-          { name: "logoUrl", label: "URL de logo" },
+          { name: "logoUrl", label: "Logo" },
         ]}
       />
     </div>

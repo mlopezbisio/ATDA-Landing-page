@@ -1,25 +1,44 @@
 import Link from "next/link";
 import { formatARS } from "@/lib/utils";
 import type { Course } from "@/lib/sanity/types";
+import { sectionBandClass, sectionCardClass, type SectionBand } from "./section-band";
 
-export function Courses({ courses }: { courses: Course[] }) {
+export function Courses({
+  courses,
+  band = "base",
+  showHeading = true,
+}: {
+  courses: Course[];
+  band?: SectionBand;
+  showHeading?: boolean;
+}) {
   if (courses.length === 0) return null;
 
   return (
-    <section id="cursos" className="bg-gray-800/30 py-20">
+    <section id="cursos" className={`${sectionBandClass(band)} py-20`}>
       <div className="container mx-auto px-6">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-extrabold text-white md:text-4xl">Cursos</h2>
-          <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-400">
-            Formaciones de ATDA. Inscribite con tarjeta, billetera Mercado Pago o transferencia inmediata.
-          </p>
-        </div>
+        {showHeading ? (
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-extrabold text-white md:text-4xl">Cursos</h2>
+            <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-400">
+              Formaciones de ATDA. Inscribite pagando con MODO (QR o app bancaria).
+            </p>
+          </div>
+        ) : null}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {courses.map((course) => (
-            <article key={course._id} className="flex flex-col rounded-xl bg-gray-800 p-6 shadow-lg">
+            <article
+              key={course._id}
+              className={`flex flex-col rounded-xl ${sectionCardClass(band)} p-6 shadow-lg`}
+            >
               {course.imageUrl ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={course.imageUrl} alt={course.title} className="mb-4 h-44 w-full rounded-lg object-cover" />
+              ) : null}
+              {course.category ? (
+                <span className="mb-2 inline-block w-fit rounded-full bg-teal-500/20 px-3 py-1 text-xs font-semibold text-teal-300">
+                  {course.category}
+                </span>
               ) : null}
               <h3 className="text-xl font-bold text-white">{course.title}</h3>
               <p className="mt-2 flex-1 text-gray-400">{course.description}</p>

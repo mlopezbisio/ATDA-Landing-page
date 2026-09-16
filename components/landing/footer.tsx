@@ -1,4 +1,4 @@
-import { ATDALogo, BookIcon, InstagramIcon, LinkedInIcon, MailIcon, TwitterIcon } from "@/components/Icons";
+import { ATDALogo, KnowledgeIcon, InstagramIcon, LinkedInIcon, MailIcon, TwitterIcon } from "@/components/Icons";
 import type { LandingSettings } from "@/lib/sanity/types";
 
 export function Footer({ settings }: { settings: LandingSettings }) {
@@ -16,7 +16,7 @@ export function Footer({ settings }: { settings: LandingSettings }) {
     settings.contactEmail
       ? { href: settings.contactEmail, label: "Enviar un correo electrónico", icon: MailIcon }
       : null,
-    settings.statuteUrl ? { href: settings.statuteUrl, label: "Ver estatuto", icon: BookIcon } : null,
+    settings.statuteUrl ? { href: settings.statuteUrl, label: "Ver estatuto", icon: KnowledgeIcon } : null,
   ].filter(Boolean) as Array<{ href: string; label: string; icon: typeof TwitterIcon }>;
 
   return (

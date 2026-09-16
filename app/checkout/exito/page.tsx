@@ -9,7 +9,7 @@ export default async function CheckoutSuccessPage({
   return (
     <CheckoutStatus
       title="Pago recibido"
-      body="Si Mercado Pago acreditó el pago, un administrador de ATDA te va a asignar el acceso al aula virtual. No hace falta crear un usuario ahora."
+      body="Si MODO acreditó el pago, un administrador de ATDA te va a asignar el acceso al aula virtual. No hace falta crear un usuario ahora."
       enrollment={enrollment}
     />
   );

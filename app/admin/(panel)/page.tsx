@@ -22,7 +22,7 @@ export default async function AdminHomePage() {
       ) : null}
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Stat label="Áreas publicadas" value={content.focusAreas.length} />
-        <Stat label="Actividades" value={content.projects.length} />
+        <Stat label="Noticias publicadas" value={content.projects.length} />
         <Stat label="Cursos activos" value={content.courses.length} />
         <Stat label="Aulas por asignar" value={paidPendingClassroom.length} />
       </div>

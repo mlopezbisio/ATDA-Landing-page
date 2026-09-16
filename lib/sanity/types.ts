@@ -1,10 +1,11 @@
-export type FocusIcon = "energy" | "industry40" | "biotech";
-export type ValueIcon = "collaboration" | "debate" | "development" | "knowledge";
-export type PaymentProvider = "mercadopago" | "talopay";
+export type FocusIcon = string;
+export type ValueIcon = string;
+export type PaymentProvider = "modo";
 export type PaymentStatus = "pending" | "paid" | "failed" | "expired" | "underpaid" | "overpaid";
 export type ClassroomAccess = "pending" | "granted";
 
 export type AboutValue = {
+  _key?: string;
   title: string;
   description: string;
   icon: ValueIcon;
@@ -50,10 +51,13 @@ export type FocusArea = {
 export type Project = {
   _id: string;
   title: string;
+  slug?: string;
   description: string;
-  category: string;
+  body?: string;
+  category?: string;
   imageUrl?: string;
   published: boolean;
+  publishedAt?: string;
 };
 
 export type NetworkPartner = {
@@ -68,6 +72,7 @@ export type Course = {
   title: string;
   slug: string;
   description: string;
+  category?: string;
   price: number;
   active: boolean;
   imageUrl?: string;
@@ -92,9 +97,9 @@ export type Enrollment = {
   status: PaymentStatus;
   classroomAccess: ClassroomAccess;
   notes?: string;
-  taloCvu?: string;
-  taloAlias?: string;
-  taloPaymentUrl?: string;
+  modoQr?: string;
+  modoDeeplink?: string;
+  modoExpiresAt?: string;
   createdAt?: string;
 };
 

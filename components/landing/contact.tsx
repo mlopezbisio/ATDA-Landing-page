@@ -2,8 +2,15 @@
 
 import { useState } from "react";
 import type { LandingSettings } from "@/lib/sanity/types";
+import { sectionBandClass, sectionCardClass, type SectionBand } from "./section-band";
 
-export function Contact({ settings }: { settings: LandingSettings }) {
+export function Contact({
+  settings,
+  band = "alt",
+}: {
+  settings: LandingSettings;
+  band?: SectionBand;
+}) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -46,13 +53,13 @@ export function Contact({ settings }: { settings: LandingSettings }) {
   const disabled = status === "submitting" || status === "success";
 
   return (
-    <section id="contact" className="bg-gray-800/30 py-20">
+    <section id="contact" className={`${sectionBandClass(band)} py-20`}>
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-extrabold text-white md:text-4xl">{settings.contactTitle}</h2>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-400">{settings.contactSubtitle}</p>
         </div>
-        <div className="mx-auto max-w-4xl rounded-lg bg-gray-800 p-8 shadow-xl">
+        <div className={`mx-auto max-w-4xl rounded-lg ${sectionCardClass(band)} p-8 shadow-xl`}>
           <form onSubmit={handleSubmit}>
             <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
               <Field label="Nombre" htmlFor="name">

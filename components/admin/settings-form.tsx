@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { IconPicker } from "@/components/admin/icon-picker";
 import type { LandingSettings } from "@/lib/sanity/types";
 
 export function SettingsForm({ initial }: { initial: LandingSettings }) {
@@ -56,6 +57,18 @@ export function SettingsForm({ initial }: { initial: LandingSettings }) {
     setStatus(response.ok ? "Guardado" : "No se pudo guardar");
   };
 
+  const aboutValues =
+    initial.aboutValues.length >= 4
+      ? initial.aboutValues
+      : [
+          ...initial.aboutValues,
+          ...Array.from({ length: Math.max(0, 4 - initial.aboutValues.length) }, () => ({
+            icon: "collaboration",
+            title: "",
+            description: "",
+          })),
+        ];
+
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
       <fieldset className="space-y-3 rounded-lg border border-gray-800 p-4">
@@ -68,9 +81,9 @@ export function SettingsForm({ initial }: { initial: LandingSettings }) {
         <legend className="px-2 text-lg font-semibold text-white">Quiénes somos</legend>
         <AdminInput name="aboutTitle" label="Título" defaultValue={initial.aboutTitle} />
         <AdminTextarea name="aboutBody" label="Texto" defaultValue={initial.aboutBody} rows={5} />
-        {initial.aboutValues.map((value, index) => (
-          <div key={value.title} className="grid gap-3 md:grid-cols-3">
-            <AdminInput name={`valueIcon${index}`} label="Ícono" defaultValue={value.icon} />
+        {aboutValues.slice(0, 4).map((value, index) => (
+          <div key={`value-${index}`} className="grid gap-3 rounded-lg border border-gray-800/80 p-3 md:grid-cols-3">
+            <IconPicker name={`valueIcon${index}`} label="Ícono" defaultValue={value.icon} />
             <AdminInput name={`valueTitle${index}`} label="Título valor" defaultValue={value.title} />
             <AdminInput name={`valueDescription${index}`} label="Descripción" defaultValue={value.description} />
           </div>

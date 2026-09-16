@@ -4,7 +4,7 @@ export const landingSettingsQuery = `*[_id == "${LANDING_SETTINGS_ID}"][0]{
   _id,
   heroTitle,
   heroSubtitle,
-  heroImageUrl,
+  "heroImageUrl": coalesce(heroImage.asset->url, heroImageUrl),
   aboutTitle,
   aboutBody,
   aboutValues,
@@ -32,29 +32,61 @@ export const focusAreasQuery = `*[_type == "focusArea"] | order(_createdAt asc){
   icon
 }`;
 
-export const projectsQuery = `*[_type == "project" && published == true] | order(_createdAt desc){
+export const projectsQuery = `*[_type == "project" && published == true] | order(_createdAt desc)[0...3]{
   _id,
   title,
+  "slug": slug.current,
   description,
+  body,
   category,
-  imageUrl,
-  published
+  "imageUrl": coalesce(image.asset->url, imageUrl),
+  published,
+  "publishedAt": _createdAt
+}`;
+
+export const publishedProjectsQuery = `*[_type == "project" && published == true] | order(_createdAt desc){
+  _id,
+  title,
+  "slug": slug.current,
+  description,
+  body,
+  category,
+  "imageUrl": coalesce(image.asset->url, imageUrl),
+  published,
+  "publishedAt": _createdAt
 }`;
 
 export const allProjectsQuery = `*[_type == "project"] | order(_createdAt desc){
   _id,
   title,
+  "slug": slug.current,
   description,
+  body,
   category,
-  imageUrl,
-  published
+  "imageUrl": coalesce(image.asset->url, imageUrl),
+  published,
+  "publishedAt": _createdAt
 }`;
+
+export const projectBySlugQuery = `*[_type == "project" && slug.current == $slug && published == true][0]{
+  _id,
+  title,
+  "slug": slug.current,
+  description,
+  body,
+  category,
+  "imageUrl": coalesce(image.asset->url, imageUrl),
+  published,
+  "publishedAt": _createdAt
+}`;
+
+export const projectCategoriesQuery = `array::unique(*[_type == "project" && published == true && defined(category) && category != ""].category) | order(@ asc)`;
 
 export const partnersQuery = `*[_type == "networkPartner"] | order(name asc){
   _id,
   name,
   url,
-  logoUrl
+  "logoUrl": coalesce(logo.asset->url, logoUrl)
 }`;
 
 export const coursesQuery = `*[_type == "course" && active == true && defined(price)] | order(_createdAt desc){
@@ -62,9 +94,10 @@ export const coursesQuery = `*[_type == "course" && active == true && defined(pr
   title,
   "slug": slug.current,
   description,
+  category,
   price,
   active,
-  imageUrl,
+  "imageUrl": coalesce(image.asset->url, imageUrl),
   quota
 }`;
 
@@ -73,9 +106,10 @@ export const allCoursesQuery = `*[_type == "course"] | order(_createdAt desc){
   title,
   "slug": slug.current,
   description,
+  category,
   price,
   active,
-  imageUrl,
+  "imageUrl": coalesce(image.asset->url, imageUrl),
   quota
 }`;
 
@@ -84,9 +118,10 @@ export const courseBySlugQuery = `*[_type == "course" && slug.current == $slug &
   title,
   "slug": slug.current,
   description,
+  category,
   price,
   active,
-  imageUrl,
+  "imageUrl": coalesce(image.asset->url, imageUrl),
   quota
 }`;
 
@@ -95,11 +130,14 @@ export const courseByIdQuery = `*[_type == "course" && _id == $id][0]{
   title,
   "slug": slug.current,
   description,
+  category,
   price,
   active,
-  imageUrl,
+  "imageUrl": coalesce(image.asset->url, imageUrl),
   quota
 }`;
+
+export const courseCategoriesQuery = `array::unique(*[_type == "course" && active == true && defined(category) && category != ""].category) | order(@ asc)`;
 
 export const enrollmentsQuery = `*[_type == "enrollment"] | order(_createdAt desc){
   _id,
@@ -112,9 +150,9 @@ export const enrollmentsQuery = `*[_type == "enrollment"] | order(_createdAt des
   status,
   classroomAccess,
   notes,
-  taloCvu,
-  taloAlias,
-  taloPaymentUrl,
+  modoQr,
+  modoDeeplink,
+  modoExpiresAt,
   "createdAt": _createdAt
 }`;
 
@@ -129,8 +167,8 @@ export const enrollmentByIdQuery = `*[_type == "enrollment" && _id == $id][0]{
   status,
   classroomAccess,
   notes,
-  taloCvu,
-  taloAlias,
-  taloPaymentUrl,
+  modoQr,
+  modoDeeplink,
+  modoExpiresAt,
   "createdAt": _createdAt
 }`;

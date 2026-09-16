@@ -1,11 +1,12 @@
 import type { FocusArea } from "@/lib/sanity/types";
 import { FocusIconView } from "./icon-map";
+import { sectionBandClass, sectionCardClass, type SectionBand } from "./section-band";
 
-export function FocusAreas({ areas }: { areas: FocusArea[] }) {
+export function FocusAreas({ areas, band = "alt" }: { areas: FocusArea[]; band?: SectionBand }) {
   if (areas.length === 0) return null;
 
   return (
-    <section id="focus-areas" className="bg-gray-900 py-20">
+    <section id="focus-areas" className={`${sectionBandClass(band)} py-20`}>
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-extrabold text-white md:text-4xl">Nuestras Áreas de Enfoque</h2>
@@ -18,7 +19,7 @@ export function FocusAreas({ areas }: { areas: FocusArea[] }) {
           {areas.map((area) => (
             <div
               key={area._id}
-              className="flex flex-col items-center rounded-xl bg-gray-800 p-8 text-center shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-teal-500/20"
+              className={`flex flex-col items-center rounded-xl ${sectionCardClass(band)} p-8 text-center shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-teal-500/20`}
             >
               <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-teal-600/20">
                 <FocusIconView name={area.icon} className="h-10 w-10 text-teal-400" />

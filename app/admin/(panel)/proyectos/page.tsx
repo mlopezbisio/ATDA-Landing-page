@@ -7,15 +7,18 @@ export default async function AdminProjectsPage() {
   return (
     <div>
       <h1 className="mb-2 text-3xl font-bold text-white">Actividad</h1>
-      <p className="mb-6 text-gray-400">Solo se muestra en el sitio si está marcada como publicada.</p>
+      <p className="mb-6 text-gray-400">
+        Noticias y columnas. En la landing se ven las 3 más recientes; el resto en Ver todas, filtrable por categoría.
+      </p>
       <CollectionManager
         type="project"
         items={items}
         fields={[
           { name: "title", label: "Título" },
-          { name: "category", label: "Categoría" },
-          { name: "imageUrl", label: "URL de imagen" },
-          { name: "description", label: "Descripción", type: "textarea" },
+          { name: "category", label: "Categoría", type: "creatable-select" },
+          { name: "imageUrl", label: "Portada" },
+          { name: "description", label: "Copete", type: "textarea", rows: 3 },
+          { name: "body", label: "Cuerpo de la nota", type: "textarea", rows: 12 },
           { name: "published", label: "Publicado", type: "checkbox" },
         ]}
       />
