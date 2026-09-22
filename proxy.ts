@@ -2,28 +2,67 @@ import { NextResponse } from "next/server";
 import { auth } from "@/auth";
 
 export default auth((req) => {
+  const host = req.headers.get("host") ?? "";
+  if (host.startsWith("127.0.0.1")) {
+    const url = req.nextUrl.clone();
+    url.hostname = "localhost";
+    return NextResponse.redirect(url);
+  }
+
   const { pathname } = req.nextUrl;
+  const role = req.auth?.user?.role;
   const isLoggedIn = Boolean(req.auth);
-  const isLogin = pathname.startsWith("/admin/login");
-  const isAdminPage = pathname.startsWith("/admin") && !isLogin;
+
+  const isAdminLogin = pathname.startsWith("/admin/login");
+  const isAdminPage = pathname.startsWith("/admin") && !isAdminLogin;
   const isAdminApi = pathname.startsWith("/api/admin");
 
-  if ((isAdminPage || isAdminApi) && !isLoggedIn) {
+  const isSocioPublic =
+    pathname === "/socio/login" ||
+    pathname === "/socio/activar" ||
+    pathname === "/socio/recuperar";
+  const isSocioPage = pathname.startsWith("/socio") && !isSocioPublic;
+  const isSocioApiPublic =
+    pathname === "/api/socio/activate" || pathname === "/api/socio/recover";
+  const isSocioApi = pathname.startsWith("/api/socio") && !isSocioApiPublic;
+
+  if ((isAdminPage || isAdminApi) && (!isLoggedIn || role !== "admin")) {
     if (isAdminApi) {
       return NextResponse.json({ error: "No autorizado" }, { status: 401 });
+    }
+    if (role === "member") {
+      return NextResponse.redirect(new URL("/socio", req.nextUrl.origin));
     }
     const login = new URL("/admin/login", req.nextUrl.origin);
     login.searchParams.set("callbackUrl", pathname);
     return NextResponse.redirect(login);
   }
 
-  if (isLogin && isLoggedIn) {
+  if (isAdminLogin && isLoggedIn && role === "admin") {
     return NextResponse.redirect(new URL("/admin", req.nextUrl.origin));
+  }
+
+  if ((isSocioPage || isSocioApi) && (!isLoggedIn || role !== "member")) {
+    if (isSocioApi) {
+      return NextResponse.json({ error: "No autorizado" }, { status: 401 });
+    }
+    if (role === "admin") {
+      return NextResponse.redirect(new URL("/admin/socios", req.nextUrl.origin));
+    }
+    const login = new URL("/socio/login", req.nextUrl.origin);
+    login.searchParams.set("callbackUrl", pathname);
+    return NextResponse.redirect(login);
+  }
+
+  if (isSocioPublic && isLoggedIn && role === "member") {
+    return NextResponse.redirect(new URL("/socio", req.nextUrl.origin));
   }
 
   return NextResponse.next();
 });
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/admin/:path*"],
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+  ],
 };

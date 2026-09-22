@@ -156,19 +156,25 @@ export function Header({
             })}
           </nav>
 
-          <Link
-            href="/#join-us"
-            onClick={(event) => {
-              if (pathname === "/") {
-                event.preventDefault();
-                scrollToHash("#join-us");
-              }
-              setIsOpen(false);
-            }}
-            className="hidden rounded-lg bg-blue-600 px-5 py-2 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-blue-700 md:inline-block"
-          >
-            Quiero ser parte
-          </Link>
+          <div className="hidden items-center gap-3 md:flex">
+            <Link
+              href="/socio/login"
+              className={`text-sm ${
+                pathname.startsWith("/socio") ? "font-semibold text-teal-300" : "text-gray-400 hover:text-white"
+              }`}
+            >
+              Acceso socios
+            </Link>
+            <Link
+              href="/afiliacion"
+              onClick={() => setIsOpen(false)}
+              className={`rounded-lg bg-blue-600 px-5 py-2 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-blue-700 ${
+                pathname.startsWith("/afiliacion") ? "ring-2 ring-teal-300/60" : ""
+              }`}
+            >
+              Quiero ser parte
+            </Link>
+          </div>
 
           <button
             type="button"
@@ -209,14 +215,15 @@ export function Header({
             );
           })}
           <Link
-            href="/#join-us"
-            onClick={(event) => {
-              if (pathname === "/") {
-                event.preventDefault();
-                scrollToHash("#join-us");
-              }
-              setIsOpen(false);
-            }}
+            href="/socio/login"
+            onClick={() => setIsOpen(false)}
+            className="text-lg text-gray-300 hover:text-white"
+          >
+            Acceso socios
+          </Link>
+          <Link
+            href="/afiliacion"
+            onClick={() => setIsOpen(false)}
             className="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white hover:bg-blue-700"
           >
             Quiero ser parte

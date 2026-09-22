@@ -6,6 +6,9 @@ export async function getAdminSession() {
   if (!session?.user?.email || !isAdminEmail(session.user.email)) {
     return null;
   }
+  if (session.user.role && session.user.role !== "admin") {
+    return null;
+  }
   return session;
 }
 

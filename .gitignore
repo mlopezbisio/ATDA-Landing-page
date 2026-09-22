@@ -28,3 +28,6 @@ client_secret*.json
 *.njsproj
 *.sln
 *.sw?
+.neon
+.agents/
+skills-lock.json

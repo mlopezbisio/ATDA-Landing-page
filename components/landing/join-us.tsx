@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CollaborationIcon } from "@/components/Icons";
 import type { LandingSettings } from "@/lib/sanity/types";
 
@@ -36,12 +37,12 @@ export function JoinUs({ settings }: { settings: LandingSettings }) {
               <CollaborationIcon className="h-8 w-8 text-white" />
             </div>
             <p className="mb-6 text-blue-100">{settings.joinCtaText}</p>
-            <a
-              href="#contact"
+            <Link
+              href="/afiliacion"
               className="w-full rounded-lg bg-white px-8 py-3 text-center font-bold text-blue-700 shadow-xl transition-all duration-300 hover:scale-105 hover:bg-gray-200"
             >
               {settings.joinCtaLabel}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -12,6 +12,7 @@ const links = [
   { href: "/admin/red", label: "Red" },
   { href: "/admin/cursos", label: "Cursos" },
   { href: "/admin/inscripciones", label: "Inscripciones" },
+  { href: "/admin/socios", label: "Socios" },
 ];
 
 export function AdminNav({ email }: { email?: string | null }) {
@@ -25,7 +26,8 @@ export function AdminNav({ email }: { email?: string | null }) {
       </div>
       <nav className="flex flex-wrap gap-2 p-4 md:flex-col">
         {links.map((link) => {
-          const active = pathname === link.href;
+          const active =
+            link.href === "/admin" ? pathname === "/admin" : pathname.startsWith(link.href);
           return (
             <Link
               key={link.href}
