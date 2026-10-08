@@ -22,7 +22,7 @@ export function AdminGoogleSignInButton() {
       type="button"
       onClick={onClick}
       disabled={busy}
-      className="mt-8 inline-block w-full rounded-lg bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700 disabled:opacity-60"
+      className="inline-block w-full rounded-lg border border-gray-700 px-4 py-3 font-semibold text-gray-200 hover:bg-gray-800 disabled:opacity-60"
     >
       {busy ? "Redirigiendo a Google…" : "Continuar con Google"}
     </button>

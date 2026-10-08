@@ -1,5 +1,6 @@
 import { CoursesArchive } from "@/components/landing/courses-archive";
 import { Footer } from "@/components/landing/footer";
+import { isModoCheckoutEnabled } from "@/lib/payments/flags";
 import { getCourseCategories, getLandingContent } from "@/lib/sanity/fetch";
 
 export default async function CoursesPage() {
@@ -10,7 +11,9 @@ export default async function CoursesPage() {
       <section className="bg-gradient-to-br from-blue-700 via-blue-600 to-teal-600 px-6 py-16 text-center text-white">
         <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">Cursos</h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-blue-50/90">
-          Formaciones de ATDA. Inscribite pagando con MODO.
+          {isModoCheckoutEnabled()
+            ? "Formaciones de ATDA. Inscribite pagando con MODO."
+            : "Formaciones de ATDA."}
         </p>
       </section>
       {content.courses.length === 0 ? (

@@ -38,8 +38,20 @@ export default auth((req) => {
     return NextResponse.redirect(login);
   }
 
+  const mustChangePassword = role === "admin" && Boolean(req.auth?.user?.mustChangePassword);
+  const isPasswordPage = pathname === "/admin/cambiar-clave";
+  const isPasswordApi = pathname === "/api/admin/password";
+
+  if (mustChangePassword && (isAdminPage || isAdminApi) && !isPasswordPage && !isPasswordApi) {
+    if (isAdminApi) {
+      return NextResponse.json({ error: "Tenés que cambiar la contraseña" }, { status: 403 });
+    }
+    return NextResponse.redirect(new URL("/admin/cambiar-clave", req.nextUrl.origin));
+  }
+
   if (isAdminLogin && isLoggedIn && role === "admin") {
-    return NextResponse.redirect(new URL("/admin", req.nextUrl.origin));
+    const target = mustChangePassword ? "/admin/cambiar-clave" : "/admin";
+    return NextResponse.redirect(new URL(target, req.nextUrl.origin));
   }
 
   if ((isSocioPage || isSocioApi) && (!isLoggedIn || role !== "member")) {
