@@ -15,7 +15,13 @@ const links = [
   { href: "/admin/socios", label: "Socios" },
 ];
 
-export function AdminNav({ email }: { email?: string | null }) {
+export function AdminNav({
+  email,
+  canChangePassword = false,
+}: {
+  email?: string | null;
+  canChangePassword?: boolean;
+}) {
   const pathname = usePathname();
 
   return (
@@ -45,6 +51,11 @@ export function AdminNav({ email }: { email?: string | null }) {
         <Link href="/" className="mb-3 block text-sm text-gray-400 hover:text-white">
           Ver sitio
         </Link>
+        {canChangePassword ? (
+          <Link href="/admin/cambiar-clave" className="mb-3 block text-sm text-gray-400 hover:text-white">
+            Cambiar contraseña
+          </Link>
+        ) : null}
         <button
           type="button"
           onClick={() => signOut({ callbackUrl: "/admin/login" })}

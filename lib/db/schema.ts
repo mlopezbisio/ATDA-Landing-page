@@ -1,4 +1,5 @@
 import {
+  boolean,
   integer,
   pgEnum,
   pgTable,
@@ -102,6 +103,23 @@ export const courseEnrollments = pgTable(
   (table) => [uniqueIndex("course_enrollments_sanity_uidx").on(table.sanityEnrollmentId)],
 );
 
+/** Admins con email y contraseña (además de los de Google en ADMIN_EMAILS). */
+export const adminUsers = pgTable(
+  "admin_users",
+  {
+    id: serial("id").primaryKey(),
+    email: varchar("email", { length: 255 }).notNull(),
+    name: varchar("name", { length: 200 }),
+    passwordHash: varchar("password_hash", { length: 255 }).notNull(),
+    mustChangePassword: boolean("must_change_password").notNull().default(true),
+    lastLoginAt: timestamp("last_login_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (table) => [uniqueIndex("admin_users_email_uidx").on(table.email)],
+);
+
+export type AdminUser = typeof adminUsers.$inferSelect;
 export type MembershipRequest = typeof membershipRequests.$inferSelect;
 export type Member = typeof members.$inferSelect;
 export type MembershipFee = typeof membershipFees.$inferSelect;

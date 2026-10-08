@@ -1,3 +1,4 @@
+import { isModoCheckoutEnabled } from "@/lib/payments/flags";
 import { getModoPaymentRequest, mapModoStatus } from "@/lib/payments/modo";
 import { getEnrollmentByIdFresh } from "@/lib/sanity/fetch";
 import { patchDocument } from "@/lib/sanity/write";
@@ -15,6 +16,9 @@ type ModoWebhookPayload = {
 };
 
 export async function POST(request: Request) {
+  if (!isModoCheckoutEnabled()) {
+    return Response.json({ error: "Checkout MODO deshabilitado" }, { status: 503 });
+  }
   try {
     const payload = (await request.json()) as ModoWebhookPayload;
     const paymentRequestId =

@@ -1,8 +1,12 @@
+import { isModoCheckoutEnabled } from "@/lib/payments/flags";
 import { createModoPaymentRequest } from "@/lib/payments/modo";
 import { getCourseById } from "@/lib/sanity/fetch";
 import { createEnrollment, patchDocument } from "@/lib/sanity/write";
 
 export async function POST(request: Request) {
+  if (!isModoCheckoutEnabled()) {
+    return Response.json({ error: "Las inscripciones online todavía no están habilitadas" }, { status: 503 });
+  }
   try {
     const body = (await request.json()) as {
       courseId?: string;

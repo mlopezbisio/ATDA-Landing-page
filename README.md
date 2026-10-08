@@ -36,7 +36,11 @@ Ver [CONTRIBUTING.md](CONTRIBUTING.md). Resumen: ramas `feat/*` y `fix/*` desde 
 
 ## Panel de administración
 
-`/admin` — ingreso con Google. Solo mails listados en `ADMIN_EMAILS`. El aula virtual de cada inscripción se asigna a mano; el panel solo marca el acceso como concedido.
+`/admin` — ingreso con Google (mails listados en `ADMIN_EMAILS`) o con email y contraseña (tabla `admin_users`, requiere `DATABASE_URL`).
+
+Alta de un admin con contraseña: `node scripts/create-admin.mjs <email> ["Nombre"]`. Imprime una contraseña temporal; el admin debe cambiarla en el primer ingreso (`/admin/cambiar-clave`). Volver a correr el script resetea la contraseña.
+
+El aula virtual de cada inscripción se asigna a mano; el panel solo marca el acceso como concedido.
 
 ## Pagos MODO
 
@@ -45,7 +49,7 @@ Ver [CONTRIBUTING.md](CONTRIBUTING.md). Resumen: ramas `feat/*` y `fix/*` desde 
 3. Checkout: `POST /api/checkout/modo` crea la inscripción y el payment request; el usuario ve QR / deeplink en `/checkout/modo/[id]`.
 4. Webhook: `POST /api/webhooks/modo` (exponé la URL pública con ngrok en local).
 
-Bloqueado hasta tener credenciales (issue #1).
+Bloqueado hasta tener credenciales (issue #1). El checkout está detrás de `MODO_CHECKOUT_ENABLED=true`; sin esa variable las rutas de checkout responden 404/503 y los cursos muestran "Inscripciones online próximamente".
 
 ## Webhooks
 

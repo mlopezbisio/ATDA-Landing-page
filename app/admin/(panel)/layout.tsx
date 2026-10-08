@@ -8,11 +8,14 @@ export default async function AdminPanelLayout({ children }: { children: React.R
   if (!session) {
     redirect("/admin/login");
   }
+  if (session.user.mustChangePassword) {
+    redirect("/admin/cambiar-clave");
+  }
 
   return (
     <AdminSessionProvider>
       <div className="flex min-h-screen flex-col bg-gray-950 text-gray-100 md:flex-row">
-        <AdminNav email={session.user?.email} />
+        <AdminNav email={session.user?.email} canChangePassword={Boolean(session.user.adminUserId)} />
         <main className="flex-1 p-6 md:p-10">{children}</main>
       </div>
     </AdminSessionProvider>

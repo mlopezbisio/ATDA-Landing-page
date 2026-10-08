@@ -15,6 +15,13 @@
       "when": 1790090000000,
       "tag": "0001_member_password",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791490000000,
+      "tag": "0002_admin_users",
+      "breakpoints": true
     }
   ]
 }
