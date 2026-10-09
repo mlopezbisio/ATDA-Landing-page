@@ -31,3 +31,5 @@ client_secret*.json
 .neon
 .agents/
 skills-lock.json
+.vercel
+.env*
